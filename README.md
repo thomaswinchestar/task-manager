@@ -1,150 +1,150 @@
-# React Todo List with Framer Motion
+# Task Manager
 
-A modern, animated Todo List application built with React and Vite, featuring a clean UI and smooth animations. This project demonstrates the use of Framer Motion for animations and Tailwind CSS for styling, along with local storage for data persistence.
+A modern, feature-rich task management application built with React, Redux Toolkit, and Framer Motion. This application provides a beautiful and intuitive interface for managing your daily tasks with smooth animations and real-time feedback.
 
 ## Features
 
-- ✨ Clean and modern UI with Tailwind CSS
-- 🎯 Add, edit, and delete todos
-- ✅ Mark todos as complete/incomplete
-- 💾 Persistent storage using localStorage
-- 🎭 Smooth animations with Framer Motion
-- ⌨️ Keyboard shortcuts for better accessibility
-- 📱 Fully responsive design
+### Core Functionality
+- ✨ Create, read, update, and delete tasks (CRUD operations)
+- ✅ Mark tasks as complete/incomplete
+- 📝 Edit task descriptions
+- 🔄 Real-time updates with smooth animations
+- 💾 Persistent storage with MongoDB
+
+### User Experience
+- 🎯 Duplicate task detection
+- ⌨️ Keyboard shortcuts support
+  - Enter to save
+  - Escape to cancel
+- 🎨 Smooth animations and transitions
+- 📱 Responsive design
+
+### Visual Feedback
+- 🚦 Color-coded notifications for different actions
+  - Green for success
+  - Yellow for warnings
+  - Red for errors
+- ✨ Interactive hover effects
+- ⚡ Animated task transitions
+- 🔄 Loading spinner animation
+
+### Data Validation
+- 🛡️ Empty task prevention
+- 🔍 Duplicate task detection
+- ⚠️ Error handling with user feedback
 
 ## Tech Stack
 
-- [React](https://reactjs.org/)
-- [Vite](https://vitejs.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [Hero Icons](https://heroicons.com/)
+### Frontend
+- **React** - UI library
+- **Redux Toolkit** - State management
+- **Framer Motion** - Animations
+- **Tailwind CSS** - Styling
+- **Heroicons** - Icons
+- **Axios** - API requests
+- **Vite** - Build tool and development server
 
-### Key Files and Their Purposes
+### Backend
+- **Node.js** - Runtime environment
+- **Express** - Web framework
+- **MongoDB** - Database
+- **Mongoose** - MongoDB ODM
+- **Cors** - Cross-origin resource sharing
 
-- **App.jsx**: Contains the todo list implementation with:
-  - Todo state management using localStorage
-  - CRUD operations (Create, Read, Update, Delete)
-  - Framer Motion animations
-  - Keyboard shortcuts handling
+## Installation
 
-- **vite.config.js**: Development server configuration:
-  - Port: 3000
-  - Auto-open browser feature
-
-- **tailwind.config.js**: Tailwind CSS setup:
-  - Content paths
-  - Theme configuration
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (version 18 or higher)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository
-
+1. Clone the repository:
 ```bash
-git clone https://github.com/thomaswinchestar/task-manager.git
-```
-
-2. Navigate to the project directory
-
-```bash
+git clone <repository-url>
 cd task-manager
 ```
 
-3. Install dependencies
-
+2. Install dependencies for both frontend and backend:
 ```bash
+# Install frontend dependencies
+cd frontend
 npm install
-# or
-yarn install
+
+# Install backend dependencies
+cd ../backend
+npm install
 ```
 
-4. Run the development server
+3. Set up environment variables:
 
+Create `.env` file in the backend directory:
+```env
+MONGODB_URI=your_mongodb_connection_string
+PORT=8000
+```
+
+Create `.env` file in the frontend directory:
+```env
+VITE_API_URL=http://localhost:8000/api
+```
+
+## Running the Application
+
+1. Start the backend server:
 ```bash
+cd backend
+npm start
+```
+
+2. Start the frontend development server:
+```bash
+cd frontend
 npm run dev
-# or
-yarn dev
 ```
 
-The application will automatically open in your browser at `http://localhost:3000`.
+The application will be available at `http://localhost:3000`
 
-### Build for Production
+## Project Structure
 
-To create a production build:
-
-```bash
-npm run build
-# or
-yarn build
+```
+task-manager/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Alert.jsx
+│   │   │   ├── TodoForm.jsx
+│   │   │   ├── TodoItem.jsx
+│   │   │   └── TodoList.jsx
+│   │   ├── store/
+│   │   │   ├── store.js
+│   │   │   ├── taskSlice.js
+│   │   │   └── alertSlice.js
+│   │   ├── context/
+│   │   │   └── TodoContext.jsx
+│   │   ├── styles/
+│   │   │   └── index.css
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── package.json
+│   └── vite.config.js
+│
+└── backend/
+    ├── routes/
+    │   └── tasks.js
+    ├── models/
+    │   └── Task.js
+    ├── package.json
+    └── server.js
 ```
 
-To preview the production build:
+## API Endpoints
 
-```bash
-npm run preview
-# or
-yarn preview
-```
-
-### Dependencies Installation Details
-
-Main dependencies:
-
-```bash
-npm install framer-motion @heroicons/react
-```
-
-Dev dependencies:
-
-```bash
-npm install -D tailwindcss postcss autoprefixer
-```
-
-## Usage
-
-### Adding Todos
-- Type your todo in the input field
-- Press Enter or click the "Add" button
-
-### Editing Todos
-- Click the pencil icon (✎) on any todo to edit
-- Press Enter to save or Escape to cancel
-- Alternatively, use the check (✓) and cross (×) buttons
-
-### Completing Todos
-- Click the checkbox next to any todo to mark it as complete/incomplete
-
-### Deleting Todos
-- Click the trash icon (🗑) to delete a todo
-
-### Keyboard Shortcuts
-- `Enter`: Save todo (when editing)
-- `Escape`: Cancel editing
-
-## Key Features Implementation
-
-### Local Storage Persistence
-The app uses localStorage to persist todos between page refreshes:
-
-### Framer Motion Animations
-Smooth animations for todo items:
-
-### Responsive Design
-Fully responsive layout using Tailwind CSS:
+- `GET /api/tasks` - Get all tasks
+- `POST /api/tasks` - Create a new task
+- `PUT /api/tasks/:id` - Update a task
+- `DELETE /api/tasks/:id` - Delete a task
 
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
 ## License
@@ -153,8 +153,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-- [Framer Motion](https://www.framer.com/motion/) for the animation library
-- [Hero Icons](https://heroicons.com/) for the beautiful icons
-
-
+- [React Documentation](https://reactjs.org/)
+- [Redux Toolkit Documentation](https://redux-toolkit.js.org/)
+- [Framer Motion Documentation](https://www.framer.com/motion/)
+- [Tailwind CSS Documentation](https://tailwindcss.com/)
