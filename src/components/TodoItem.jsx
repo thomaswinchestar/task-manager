@@ -1,9 +1,16 @@
 import { motion } from 'framer-motion'
 import { TrashIcon, PencilIcon } from '@heroicons/react/24/outline'
 import TodoEditForm from './TodoEditForm'
+import { useTodoContext } from '../context/TodoContext'
 
-function TodoItem({ todo, onToggle, onDelete, onStartEdit, editingId, onSave, onCancel }) {
+function TodoItem({ todo, onToggle, onStartEdit, editingId, onSave, onCancel }) {
+  const { deleteTodo, showAlert } = useTodoContext()
   const isEditing = editingId === todo.id
+
+  const handleDelete = (id) => {
+    deleteTodo(id)
+    showAlert('Task deleted successfully!', 'success')
+  }
 
   return (
     <motion.div
@@ -44,7 +51,7 @@ function TodoItem({ todo, onToggle, onDelete, onStartEdit, editingId, onSave, on
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        onClick={() => onDelete(todo.id)}
+        onClick={() => handleDelete(todo.id)}
         className="text-red-500 hover:text-red-600"
       >
         <TrashIcon className="h-5 w-5" />
