@@ -48,13 +48,13 @@ A modern, animated Todo List application built with React and Vite, featuring a 
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/todo-list.git
+git clone https://github.com/thomaswinchestar/task-manager.git
 ```
 
 2. Navigate to the project directory
 
 ```bash
-cd todo-list
+cd task-manager
 ```
 
 3. Install dependencies
