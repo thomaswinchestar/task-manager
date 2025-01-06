@@ -20,17 +20,21 @@ A modern, animated Todo List application built with React and Vite, featuring a 
 - [Framer Motion](https://www.framer.com/motion/)
 - [Hero Icons](https://heroicons.com/)
 
-## Project Structure
+### Key Files and Their Purposes
 
-todo-list/
-├── src/
-│ ├── App.jsx # Main todo list component
-│ ├── main.jsx # Application entry point
-│ └── index.css # Tailwind CSS imports and global styles
-├── vite.config.js # Vite configuration (port 3000)
-├── tailwind.config.js # Tailwind CSS configuration
-├── postcss.config.js # PostCSS configuration
-└── package.json # Project dependencies and scripts
+- **App.jsx**: Contains the todo list implementation with:
+  - Todo state management using localStorage
+  - CRUD operations (Create, Read, Update, Delete)
+  - Framer Motion animations
+  - Keyboard shortcuts handling
+
+- **vite.config.js**: Development server configuration:
+  - Port: 3000
+  - Auto-open browser feature
+
+- **tailwind.config.js**: Tailwind CSS setup:
+  - Content paths
+  - Theme configuration
 
 ## Getting Started
 
@@ -43,13 +47,65 @@ todo-list/
 
 1. Clone the repository
 
+```bash
+git clone https://github.com/yourusername/todo-list.git
+```
+
 2. Navigate to the project directory
+
+```bash
+cd todo-list
+```
 
 3. Install dependencies
 
+```bash
+npm install
+# or
+yarn install
+```
+
 4. Run the development server
 
+```bash
+npm run dev
+# or
+yarn dev
+```
+
 The application will automatically open in your browser at `http://localhost:3000`.
+
+### Build for Production
+
+To create a production build:
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+To preview the production build:
+
+```bash
+npm run preview
+# or
+yarn preview
+```
+
+### Dependencies Installation Details
+
+Main dependencies:
+
+```bash
+npm install framer-motion @heroicons/react
+```
+
+Dev dependencies:
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+```
 
 ## Usage
 
@@ -100,3 +156,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
 - [Framer Motion](https://www.framer.com/motion/) for the animation library
 - [Hero Icons](https://heroicons.com/) for the beautiful icons
+
+
