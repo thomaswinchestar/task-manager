@@ -54,7 +54,7 @@ git clone https://github.com/thomaswinchestar/task-manager.git
 2. Navigate to the project directory
 
 ```bash
-cd todo-list
+cd task-manager
 ```
 
 3. Install dependencies
